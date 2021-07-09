@@ -1,3 +1,276 @@
 @import 'tailwindcss/dist/base.css';
 @import 'tailwindcss/dist/components.css';
 @import 'tailwindcss/dist/utilities.css';
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+html {
+    font-size: 62.5%;
+}
+body {
+	background-image: linear-gradient(to bottom, #b8f8af, #b4f7bf, #b4f5cc, #b7f3d7, #bff0df, #bff0e1, #bfefe2, #bfefe4, #b3f2e2, #a8f4e0, #9cf7dd, #90f9d9);
+}
+header {
+    width: 100%;
+    height: 50px;
+	position: sticky;
+    top: 0;
+    z-index: 3;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #99DDC8;
+	box-shadow: 0px 0px 5px;
+}
+.logotipo {
+    width: auto;
+    height: auto;
+    display: flex;
+    align-items:center;
+}
+.logotipo__imagen {
+    width: 40px;
+    height: 40px;
+}
+.logotipo__titulo {
+    font-size: 1.5rem;
+    font-family: 'Otomanopee One', sans-serif;
+    color: #283F3B;
+}
+.carrito {
+	position: relative;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.carrito__logo {
+    width: 60%;
+    height: 60%;
+}
+.contador {
+	position: absolute;
+	top: 0;
+	font-size: 1.2rem;
+	font-weight: bolder;
+	color: #283F3B;
+}
+.color1 {
+    color: #283F3B;
+}
+.color2 {
+    color: #556F44;
+}
+.color3 {
+    color: #659B5E;
+}
+.color4 {
+    color: #95BF74;
+}
+.color5 {
+    color: #99DDC8;
+}
+.font__google {
+    font-family: 'Otomanopee One', sans-serif;
+}
+/* Contenedor padre de todas las cards */
+.padre__app {
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(300px,350px);
+    grid-template-rows: repeat(3,1fr);
+    justify-content: center;
+    align-items: center;
+    row-gap: 20px;
+    column-gap: 20px;
+    margin-top: 20px;
+}
+@media screen and (min-width: 650px) {
+	.padre__app {
+		grid-template-columns: repeat(2,minmax(320px,350px));
+	}
+	.parrafito {
+		font-size: 1.3rem;
+	}
+}
+@media screen and (min-width: 1100px) {
+	.padre__app {
+		grid-template-columns: repeat(3,minmax(350px,450px));
+	}
+	.parrafito {
+		font-size: 1.5rem;
+	}
+}
+/* Estilos que va a tener una card */
+.card {
+    position: relative;
+    display: grid;
+    width: 100%;
+    height: auto;
+    box-shadow: 0px 0px 5px 1px rgb(153, 221, 200);
+    padding: 3px;
+}
+/* Estilos de la imagen de la card */
+.imagen__aguacate {
+    width: 100%;
+    height: auto;
+}
+.opaco {
+    opacity: 0.1;
+}
+/* Estilos de la descripción oculta de la card que aparece cuando pongo el mouses arriba */
+.parrafito {
+	position: absolute;
+	padding: 10px;
+	width: 100%;
+	font-size: 1.3rem;
+	text-align: justify;
+	color: #283F3B;
+}
+/* Estilos del nombre de la card */
+.nombre {
+    justify-self: center;
+    width: 100%;
+	outline-style: none;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    font-family: 'Otomanopee One', sans-serif;
+    color: white;
+    background-color: #659B5E;
+}
+/* Estilos de el precio de la card */
+.precio {
+    font-size: 1.5rem;
+    font-weight: bolder;
+	outline-style: none;
+    color: #283F3B;
+    background-color: #95BF74;
+	cursor: pointer;
+}
+/* Efecto del borde usando los span y animaciones */
+.spanarriba{
+    position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	width: 100%;
+	height: 3px;
+	background: linear-gradient(90deg, #5cbf4c, #49b453, #37a959, #269e5d, #17925f, #0b865f, #087b5e, #0f6f5b);
+    animation: borde1 5s linear infinite;
+}
+@keyframes borde1{
+	0%{
+		transform: scaleX(0);
+		transform-origin: left;
+	}
+	50%{
+		transform: scaleX(1);
+		transform-origin: left;
+	}
+	50.1%{
+		transform: scaleX(1);
+		transform-origin: right;
+	}
+	100%{
+		transform: scaleX(0);
+		transform-origin: right;
+	}
+}
+.spanderecha {
+    position: absolute;
+	top: 0;
+	right: 0;
+	display: block;
+	width: 3px;
+	height: 100%;
+	background: linear-gradient(180deg, #5cbf4c, #49b453, #37a959, #269e5d, #17925f, #0b865f, #087b5e, #0f6f5b);
+    animation: borde2 5s linear infinite;
+}
+@keyframes borde2{
+	0%{
+		transform: scaleY(0);
+		transform-origin: top;
+	}
+	50%{
+		transform: scaleY(1);
+		transform-origin: top;
+	}
+	50.1%{
+		transform: scaleY(1);
+		transform-origin: bottom;
+	}
+	100%{
+		transform: scaleY(0);
+		transform-origin: bottom;
+	}
+}
+.spanabajo {
+    position: absolute;
+	bottom: 0;
+	left: 0;
+	display: block;
+	width: 100%;
+	height: 3px;
+    background: linear-gradient(270deg, #5cbf4c, #49b453, #37a959, #269e5d, #17925f, #0b865f, #087b5e, #0f6f5b);
+    animation: borde3 5s linear infinite;
+}
+@keyframes borde3{
+	0%{
+		transform: scaleX(0);
+		transform-origin: right;
+	}
+	50%{
+		transform: scaleX(1);
+		transform-origin: right;
+	}
+	50.1%{
+		transform: scaleX(1);
+		transform-origin: left;
+	}
+	100%{
+		transform: scaleX(0);
+		transform-origin: left;
+	}
+}
+.spanizquierda {
+    position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	width: 3px;
+	height: 100%;
+    background: linear-gradient(360deg, #5cbf4c, #49b453, #37a959, #269e5d, #17925f, #0b865f, #087b5e, #0f6f5b);
+    animation: borde4 5s linear infinite;
+}
+@keyframes borde4{
+	0%{
+		transform: scaleY(0);
+		transform-origin: bottom;
+	}
+	50%{
+		transform: scaleY(1);
+		transform-origin: bottom;
+	}
+	50.1%{
+		transform: scaleY(1);
+		transform-origin: top;
+	}
+	100%{
+		transform: scaleY(0);
+		transform-origin: top;
+	}
+}
+/* Clase para detener la animación de los span del borde */
+.pause__animation {
+    animation-play-state: paused;
+}
+.selectDisable {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}

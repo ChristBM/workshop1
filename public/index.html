@@ -2,82 +2,41 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="icon" href="%PUBLIC_URL%/aguacatelogo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="Web site created using create-snowpack-app"
-    />
-    <!--
-      Snowpack will replace %PUBLIC_URL% with the value you have for `baseUrl` in `snowpack.config.js`.
-      Make sure to update it with your GitHub Page URL. https://<your-username>.github.io/<your-repo-name>
-
-      More about config options:
-      - https://www.snowpack.dev/reference/configuration#buildoptions.baseurl
-    -->
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="%PUBLIC_URL%/_dist_/index.css"
-    />
-    <title>Snowpack & Tailwind App</title>
+    <meta name="description" content="Una mini tienda de aguacates en platzi"/>
+    <link rel="stylesheet" type="text/css" href="%PUBLIC_URL%/_dist_/index.css"/>
+    <link rel="stylesheet" type="text/css" href="%PUBLIC_URL%/css/desktop.css" media="(min-width: 930px)">
+    <title>mini-AVO</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Otomanopee+One&display=swap" rel="stylesheet">
   </head>
   <body>
-    <!--
-      This HTML file is a template.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-
-      Start modyfing from here.
-    -->
+    <header>
+      <div class="logotipo">
+        <img class="logotipo__imagen" src="%PUBLIC_URL%/aguacatelogo.png" alt="logo de la tienda">
+        <h2 class="logotipo__titulo"> mini-AVO </h2>
+      </div>
+      <a class="carrito" href="#">
+        <img class="carrito__logo" src="%PUBLIC_URL%/carrito.svg"></img>
+        <p class="contador"></p>
+      </a>
+    </header>
     <div class="py-10 max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center">
         <p
-          class="text-base leading-6 text-indigo-600 font-semibold tracking-wide uppercase"
-        >
-          Snowpack
+          class="color1 text-base leading-6 font-semibold tracking-wide uppercase">
+          Curso de Manipulación del DOM en Platzi (workshop1)
         </p>
         <h3
-          class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl sm:leading-10"
-        >
-          Tailwind template
+          class="color2 font__google mt-2 text-3xl leading-8 font-extrabold tracking-tight sm:text-4xl sm:leading-10">
+          Mini Tienda de Aguacates Online
         </h3>
         <p class="mt-4 max-w-2xl text-xl leading-7 text-gray-500 mx-auto">
-          Use this template to build awesome websites using Snowpack and
-          Tailwind. It also includes Prettier and automatic publish to GitHub
-          pages using GitHub Actions. Learn more:
+          Los aguacates más deliciosos de internet. Calidad y sabor garantizados :)
         </p>
-        <ul
-          class="text-xl leading-7 sm:flex justify-around sm:max-w-2xl sm:mx-auto mt-10"
-        >
-          <li class="my-4 p-4 px-6 bg-gray-300 hover:bg-gray-500">
-            <a href="https://snowpack.dev" target="_blank">snowpack.dev</a>
-          </li>
-          <li class="my-4 p-4 px-6 bg-gray-300 hover:bg-gray-500">
-            <a href="https://tailwindcss.com" target="_blank"
-              >tailwindcss.com</a
-            >
-          </li>
-          <li class="my-4 p-4 px-6 bg-gray-300 hover:bg-gray-500">
-            <a
-              href="https://docs.github.com/en/free-pro-team@latest/actions"
-              target="_blank"
-              >GitHub Actions</a
-            >
-          </li>
-        </ul>
-        <p class="mt-14 text-xl leading-7 text-gray-500">Start using it:</p>
-        <div class="my-5 bg-gray-800 p-5 text-white">
-          <code>
-            npx create-snowpack-app my-app --template snowpack-template-tailwind
-          </code>
-        </div>
-        <p class="mt-16 text-xl leading-7 text-gray-500 underline">
-          <a href="https://github.com/jonalvarezz/snowpack-template-tailwind"
-            >See on GitHub</a
-          >
-        </p>
+        <div id="app"></div>
       </div>
     </div>
 
