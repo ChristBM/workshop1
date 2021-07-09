@@ -5,6 +5,6 @@ module.exports = {
     src: '/_dist_',
   },
   buildOptions: {
-    baseUrl: 'https://christbm.github.io/workshop1/',
+    baseUrl: 'https://christbm.github.io/workshop1',
   },
 }
